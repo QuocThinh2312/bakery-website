@@ -68,14 +68,107 @@
             </div>
         </section>
 
-        <!-- Script -->
-        <script>
-            const header = document.querySelector('.header');
-            const hero = document.querySelector('.hero');
+        <main>
+            <section class="products">
+                <div class="container">
+                    <h2 class="products__heading">Top Products</h2>
+                    <div class="products__list">
+                        <!-- Item 1 -->
+                        <article class="products-item">
+                            <a href="#!" class="products-item__thumb">
+                                <img src="./assets/images/products-1.webp" alt="Whole Grain Bread" class="products-item__img" />
+                            </a>
+                            <div class="products-item__row">
+                                <p class="products-item__price">$40</p>
+                                <a href="#!" class="products-item__info">i</a>
+                            </div>
+                            <div class="products-item__row">
+                                <h3 class="products-item__title">Whole Grain Bread</h3>
+                                <button class="btn products-item__btn">Add</button>
+                            </div>
+                        </article>
 
-            window.addEventListener('scroll', () => {
-                header.classList.toggle('scrolled', window.scrollY >= hero.offsetHeight);
-            });
-        </script>
+                        <!-- Item 2 -->
+                        <article class="products-item">
+                            <a href="#!" class="products-item__thumb">
+                                <img src="./assets/images/products-2.webp" alt="Mixed Berry Danish" class="products-item__img" />
+                            </a>
+                            <div class="products-item__row">
+                                <p class="products-item__price">$38</p>
+                                <a href="#!" class="products-item__info">i</a>
+                            </div>
+                            <div class="products-item__row">
+                                <h3 class="products-item__title">Mixed Berry Danish</h3>
+                                <button class="btn products-item__btn">Add</button>
+                            </div>
+                        </article>
+
+                        <!-- Item 3 -->
+                        <article class="products-item">
+                            <a href="#!" class="products-item__thumb">
+                                <img
+                                    src="./assets/images/products-3.webp"
+                                    alt="Rustic Multigrain Loaf"
+                                    class="products-item__img"
+                                />
+                            </a>
+                            <div class="products-item__row">
+                                <p class="products-item__price">$27</p>
+                                <a href="#!" class="products-item__info">i</a>
+                            </div>
+                            <div class="products-item__row">
+                                <h3 class="products-item__title">Rustic Multigrain Loaf</h3>
+                                <button class="btn products-item__btn">Add</button>
+                            </div>
+                        </article>
+
+                        <!-- Item 4 -->
+                        <article class="products-item">
+                            <a href="#!" class="products-item__thumb">
+                                <img src="./assets/images/products-4.webp" alt="Artisan Sourdough" class="products-item__img" />
+                            </a>
+                            <div class="products-item__row">
+                                <p class="products-item__price">$29</p>
+                                <a href="#!" class="products-item__info">i</a>
+                            </div>
+                            <div class="products-item__row">
+                                <h3 class="products-item__title">Artisan Sourdough</h3>
+                                <button class="btn products-item__btn">Add</button>
+                            </div>
+                        </article>
+
+                        <!-- Item 5 -->
+                        <article class="products-item">
+                            <a href="#!" class="products-item__thumb">
+                                <img src="./assets/images/products-5.webp" alt="Spinach Feta Pie" class="products-item__img" />
+                            </a>
+                            <div class="products-item__row">
+                                <p class="products-item__price">$41</p>
+                                <a href="#!" class="products-item__info">i</a>
+                            </div>
+                            <div class="products-item__row">
+                                <h3 class="products-item__title">Spinach Feta Pie</h3>
+                                <button class="btn products-item__btn">Add</button>
+                            </div>
+                        </article>
+
+                        <!-- Item 6 -->
+                        <article class="products-item">
+                            <a href="#!" class="products-item__thumb">
+                                <img src="./assets/images/products-6.webp" alt="Sesame Kaiser Roll" class="products-item__img" />
+                            </a>
+                            <div class="products-item__row">
+                                <p class="products-item__price">$16</p>
+                                <a href="#!" class="products-item__info">i</a>
+                            </div>
+                            <div class="products-item__row">
+                                <h3 class="products-item__title">Sesame Kaiser Roll</h3>
+                                <button class="btn products-item__btn">Add</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
     </body>
 </html>
