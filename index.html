@@ -36,7 +36,7 @@
                         <img src="./assets/images/logo.svg" alt="Keithston Coffee Shop" />
                     </a>
                     <!-- Navigation -->
-                    <nav class="nav">
+                    <nav class="nav" aria-label="Main menu">
                         <ul class="nav__list">
                             <li>
                                 <a href="#!" class="nav__link">Home</a>
@@ -72,7 +72,8 @@
             <!-- Products -->
             <section class="products">
                 <div class="container">
-                    <h2 class="products__heading">Top Products</h2>
+                    <h2 class="heading">Top Products</h2>
+
                     <div class="products__list">
                         <!-- Item 1 -->
                         <article class="products-item">
@@ -178,6 +179,108 @@
                     Fresh bread, delicious pastries, and quality ingredients. Everything you need for a perfect bakery experience.
                 </p>
                 <a href="#!" class="btn discount__btn">Learn More</a>
+            </section>
+
+            <!-- Explore -->
+            <section class="explore">
+                <div class="container">
+                    <h2 class="heading">Explore More</h2>
+
+                    <nav class="tabs" aria-label="Cake menu">
+                        <ul class="tabs__list">
+                            <li class="tab-item tab-item--active">
+                                <button type="button" class="tab-item__btn">Cake</button>
+                            </li>
+                            <li class="tab-item">
+                                <button type="button" class="tab-item__btn">Muffins</button>
+                            </li>
+                            <li class="tab-item">
+                                <button type="button" class="tab-item__btn">Croissant</button>
+                            </li>
+                            <li class="tab-item">
+                                <button type="button" class="tab-item__btn">Bread</button>
+                            </li>
+                            <li class="tab-item">
+                                <button type="button" class="tab-item__btn">Tart</button>
+                            </li>
+                            <li class="tab-item">
+                                <button type="button" class="tab-item__btn">Favorite</button>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="gallery">
+                        <ul class="gallery__list">
+                            <!-- Cake group -->
+                            <li class="gallery-item" data-category="cake">
+                                <a href="#!" title="View details">
+                                    <figure class="gallery-item__thumb">
+                                        <img
+                                            src="./assets/images/cake-1.webp"
+                                            alt="Chocolate muffin topped with sliced almonds and fresh blueberries on a wooden board."
+                                            class="gallery-item__img"
+                                        />
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="gallery-item" data-category="cake">
+                                <a href="#!" title="View details">
+                                    <figure class="gallery-item__thumb">
+                                        <img
+                                            src="./assets/images/cake-2.webp"
+                                            alt="Whole cheesecake topped with mixed berry sauce, fresh raspberries, and blueberries."
+                                            class="gallery-item__img"
+                                        />
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="gallery-item" data-category="cake">
+                                <a href="#!" title="View details">
+                                    <figure class="gallery-item__thumb">
+                                        <img
+                                            src="./assets/images/cake-3.webp"
+                                            alt="A slice of berry crumble cake served on a white vintage plate."
+                                            class="gallery-item__img"
+                                        />
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="gallery-item" data-category="cake">
+                                <a href="#!" title="View details">
+                                    <figure class="gallery-item__thumb">
+                                        <img
+                                            src="./assets/images/cake-4.webp"
+                                            alt="Sliced lemon loaf cake dusted with powdered sugar and topped with blueberries."
+                                            class="gallery-item__img"
+                                        />
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="gallery-item" data-category="cake">
+                                <a href="#!" title="View details">
+                                    <figure class="gallery-item__thumb">
+                                        <img
+                                            src="./assets/images/cake-5.webp"
+                                            alt="A slice of layered chocolate cake decorated with fresh raspberries and mint."
+                                            class="gallery-item__img"
+                                        />
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="gallery-item" data-category="cake">
+                                <a href="#!" title="View details">
+                                    <figure class="gallery-item__thumb">
+                                        <img
+                                            src="./assets/images/cake-6.webp"
+                                            alt="Chocolate cupcake topped with a generous swirl of whipped cream and chocolate shavings."
+                                            class="gallery-item__img"
+                                        />
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
