@@ -5,11 +5,17 @@
 }
 
 :root {
+    --font-body: 'Inter', sans-serif;
+    --font-nav: 'Poppins', sans-serif;
+    --font-heading: 'Sansita Swashed', sans-serif;
+
     --bg-color-white: #fff;
     --text-color-white: #f5f5f5;
     --text-color-sand: #e9bd8c;
     --header-bg: transparent;
     --header-bg-scrolled: #111;
+    --btn-bg: #933c24;
+    --btn-bg-hover: rgba(147, 60, 36, 0.8);
 }
 
 html {
@@ -17,10 +23,9 @@ html {
 }
 
 body {
-    height: 10000px;
     background: var(--bg-color-white);
 
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.6rem;
 }
 
@@ -62,10 +67,31 @@ img {
     margin-inline: auto;
 }
 
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 194px;
+    height: 65px;
+    border-radius: 8px;
+
+    background: var(--btn-bg);
+    color: var(--text-color-white);
+
+    font-size: 2.4rem;
+    font-weight: 600;
+
+    &:hover {
+        background: var(--btn-bg-hover);
+    }
+}
+
 /* Header */
 .header {
     position: sticky;
     top: -9.5px;
+    z-index: 999;
     padding-block: 19px 9.5px;
 
     background: var(--header-bg);
@@ -95,11 +121,60 @@ img {
 
     color: var(--text-color-white);
 
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-nav);
     font-size: 2.2rem;
     font-weight: 600;
 
     &:hover {
         color: var(--text-color-sand);
+    }
+}
+
+/* Hero */
+.hero {
+    margin-top: 149.5px;
+}
+
+.hero::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: url(../images/hero-img.webp) left center / cover no-repeat;
+}
+
+.hero__desc {
+    color: var(--text-color-sand);
+
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.hero__heading {
+    max-width: 424px;
+    margin-block: 24px 101px;
+
+    color: var(--text-color-white);
+
+    font-family: var(--font-heading);
+    font-size: 7.4rem;
+}
+
+.hero__cta {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.hero__link {
+    color: var(--text-color-sand);
+
+    font-size: 2.4rem;
+    font-weight: 600;
+
+    &:hover {
+        text-decoration: underline;
     }
 }
