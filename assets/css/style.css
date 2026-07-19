@@ -25,6 +25,11 @@
     --footer-text-hover-color: #fef08a;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 html {
     font-size: 62.5%;
 }
