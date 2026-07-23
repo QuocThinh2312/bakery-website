@@ -38,14 +38,14 @@
         <!-- Header -->
         <header class="header">
             <div class="container">
-                <div class="items-center">
+                <div class="items-center header__inner">
                     <!-- Logo -->
                     <a href="./">
                         <img src="./assets/images/logo.svg" width="87" height="99" alt="Keithston Coffee Shop" />
                     </a>
 
                     <!-- Navigation -->
-                    <nav class="nav" aria-label="Main navigation">
+                    <nav aria-label="Main navigation">
                         <ul class="items-center">
                             <li>
                                 <a href="#!" class="nav__link">Home</a>
@@ -68,11 +68,13 @@
         <!-- Hero -->
         <section class="items-center hero">
             <div class="container">
-                <p class="hero__desc">Delicious Cafe</p>
-                <h1 class="hero__heading">Sweet Treats, Perfect Eats</h1>
-                <div class="items-center hero__cta">
-                    <a href="#!" class="btn flex-center hero__btn">Shop Now</a>
-                    <a href="#!" class="hero__link">Learn More</a>
+                <div class="hero__inner">
+                    <p class="hero__desc">Delicious Cafe</p>
+                    <h1 class="hero__heading">Sweet Treats, Perfect Eats</h1>
+                    <div class="items-center hero__cta">
+                        <a href="#!" class="btn flex-center hero__btn">Shop Now</a>
+                        <a href="#!" class="hero__link">Learn More</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -239,7 +241,7 @@
 
             <!-- Discount -->
             <section class="flex-center discount">
-                <h2 class="discount__heading">20% Off Your First Order</h2>
+                <h2 class="discount__heading">20% Off &nbsp;Your First Order</h2>
                 <p class="desc">
                     Fresh bread, delicious pastries, and quality ingredients. Everything you need for a perfect bakery experience.
                 </p>
@@ -406,7 +408,7 @@
                                         decoding="async"
                                     />
                                 </a>
-                                <figcaption class="flex-center featured__info">
+                                <figcaption class="flex-between featured__info">
                                     <a href="#!">
                                         <h3 class="featured__name">Puff Pastry</h3>
                                     </a>
@@ -429,7 +431,7 @@
                                         decoding="async"
                                     />
                                 </a>
-                                <figcaption class="flex-center featured__info">
+                                <figcaption class="flex-between featured__info">
                                     <a href="#!">
                                         <h3 class="featured__name">Doughnuts</h3>
                                     </a>
@@ -452,7 +454,7 @@
                                         decoding="async"
                                     />
                                 </a>
-                                <figcaption class="flex-center featured__info">
+                                <figcaption class="flex-between featured__info">
                                     <a href="#!">
                                         <h3 class="featured__name">Brownies</h3>
                                     </a>
@@ -531,7 +533,7 @@
                         <address class="footer__info">
                             <a href="tel:(456)789-12301" class="footer__text">(456) 789-12301</a>
                             <a href="mailto:info@modrino.co.uk" class="footer__text">info@modrino.co.uk</a>
-                            <a class="footer__text footer__address"> South 13th street, New york America </a>
+                            <p class="footer__text footer__address">South 13th street, New york America</p>
                         </address>
                     </div>
 
@@ -560,7 +562,7 @@
                         <div class="news__list">
                             <!-- Item 1 -->
                             <a href="#!">
-                                <article class="flex-center news-item">
+                                <article class="news-item">
                                     <figure class="news-item__thumb">
                                         <img
                                             src="./assets/images/recent-news-1.webp"
@@ -572,7 +574,7 @@
                                             decoding="async"
                                         />
                                     </figure>
-                                    <div class="news-item__info">
+                                    <div>
                                         <time datetime="2024-06-14" class="news-item__time">June 14, 2024</time>
                                         <h3 class="footer__text footer__text--small">Puff pastry bliss.</h3>
                                     </div>
@@ -581,7 +583,7 @@
 
                             <!-- Item 2 -->
                             <a href="#!">
-                                <article class="flex-center news-item">
+                                <article class="news-item">
                                     <figure class="news-item__thumb">
                                         <img
                                             src="./assets/images/recent-news-2.webp"
@@ -593,7 +595,7 @@
                                             decoding="async"
                                         />
                                     </figure>
-                                    <div class="news-item__info">
+                                    <div>
                                         <time datetime="2026-07-19" class="news-item__time">July 19, 2026</time>
                                         <h3 class="footer__text footer__text--small">A bite of bliss.</h3>
                                     </div>
