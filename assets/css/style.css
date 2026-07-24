@@ -155,17 +155,39 @@ img {
     z-index: 999;
 
     width: 100%;
-    padding-top: 19px;
+    padding-top: 20px;
 
     background: transparent;
 }
 
 .header__inner {
-    gap: 123px;
+    gap: 124px;
+}
+
+.header__logo {
+    flex-shrink: 0;
+}
+
+.nav {
+    flex: 1;
+    overflow: auto hidden;
+
+    &::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 999px;
+        background-color: var(--btn-bg-hover-color);
+    }
+}
+
+.nav__item {
+    flex-shrink: 0;
 }
 
 .nav__link {
-    padding: 7.5px 15px;
+    padding: 8px 16px;
 
     font-family: var(--font-nav);
     font-weight: 600;
@@ -196,6 +218,13 @@ img {
 .hero__inner {
     display: flex;
     flex-direction: column;
+    gap: 72px;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .hero__desc {
@@ -206,7 +235,6 @@ img {
 
 .hero__heading {
     max-width: 424px;
-    margin-block: 17.7px 74.5px;
 
     font-family: var(--font-heading);
     font-size: var(--fs-hero-heading);
@@ -215,7 +243,7 @@ img {
 }
 
 .hero__cta {
-    gap: 19px;
+    gap: 20px;
 }
 
 .hero__link {
@@ -238,7 +266,11 @@ img {
 }
 
 .products-item {
-    padding: 20px 29px 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    padding: 20px 28px 36px;
     border-radius: 8px;
 
     background: url(../images/products-bg.webp) center / cover no-repeat;
@@ -261,10 +293,6 @@ img {
     object-fit: contain;
 }
 
-.products-item__row {
-    margin-top: 30px;
-}
-
 .products-item__thumb + .products-item__row {
     justify-content: initial;
 }
@@ -284,11 +312,11 @@ img {
 }
 
 .products-item__info {
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
     border: 1px solid var(--text-color-white);
     border-radius: 50%;
-    margin-inline: auto 17px;
+    margin-inline: auto 16px;
 
     font-weight: 500;
     color: var(--text-color-white);
@@ -306,8 +334,8 @@ img {
 }
 
 .products-item__btn {
-    min-width: 71px;
-    height: 49px;
+    min-width: 72px;
+    height: 48px;
     border-radius: 4px;
 
     font-weight: 500;
@@ -317,9 +345,9 @@ img {
 /* Discount */
 .discount {
     flex-direction: column;
-    gap: 37px;
+    gap: 36px;
 
-    padding-block: 50px;
+    padding-block: 52px;
     margin-top: var(--section-spacing);
 
     background: url(../images/discount-bg.webp) center / cover no-repeat;
@@ -348,7 +376,7 @@ img {
 
 .tabs {
     border-bottom: 1px solid var(--nav-border-bottom-color);
-    margin-block: 70px 89px;
+    margin-block: 72px 88px;
 }
 
 .tabs__list {
@@ -357,7 +385,7 @@ img {
 
 .tab-item {
     position: relative;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
     cursor: pointer;
 }
 
@@ -411,9 +439,9 @@ img {
 /* About */
 .about {
     flex-direction: column;
-    gap: 45px;
+    gap: 44px;
 
-    padding-block: 50px;
+    padding-block: 52px;
     margin-top: var(--section-spacing);
 
     background: url(../images/about-bg.webp) center / cover no-repeat;
@@ -464,7 +492,7 @@ img {
 
 .featured__info {
     padding-inline: 60px;
-    margin-top: 31px;
+    margin-top: 32px;
 }
 
 .featured__name,
@@ -487,8 +515,8 @@ img {
 }
 
 .social {
-    gap: 32.5px;
-    margin-inline: auto 118px;
+    gap: 32px;
+    margin-inline: auto 120px;
 }
 
 .social__label {
@@ -498,7 +526,7 @@ img {
 }
 
 .social__list {
-    gap: 15px;
+    gap: 16px;
 }
 
 .social__icon {
@@ -509,14 +537,14 @@ img {
     }
 
     & svg {
-        width: 31px;
-        height: 31px;
+        width: 32px;
+        height: 32px;
     }
 }
 
 .footer__main {
     gap: 0;
-    margin-block: 30px 60px;
+    margin-block: 32px 60px;
 }
 
 .footer__heading {
@@ -567,13 +595,13 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    row-gap: 19px;
+    row-gap: 20px;
 }
 
 .news-item {
     display: flex;
     align-items: flex-start;
-    column-gap: 23px;
+    column-gap: 24px;
 }
 
 .news-item__thumb {
@@ -597,7 +625,7 @@ img {
 
 .news-item__time {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
     font-family: var(--font-nav);
     font-size: var(--fs-small-text);
