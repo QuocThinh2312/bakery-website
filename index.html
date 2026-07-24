@@ -39,16 +39,46 @@
         <header class="header">
             <div class="container">
                 <div class="items-center header__inner">
+                    <input type="checkbox" id="menu-checkbox" class="header__input-checkbox" hidden />
+
                     <!-- Logo -->
                     <a href="./" class="header__logo">
                         <img src="./assets/images/logo.svg" width="87" height="99" alt="Keithston Coffee Shop" />
                     </a>
 
+                    <label for="menu-checkbox" class="header__open-menu" aria-label="Open navigation menu">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+                        </svg>
+                    </label>
+
+                    <label for="menu-checkbox" class="header__menu-overlay"></label>
+
                     <!-- Navigation -->
                     <nav class="nav" aria-label="Main navigation">
-                        <ul class="items-center">
+                        <label for="menu-checkbox" class="nav__close-menu" aria-label="Close navigation menu">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-6"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </label>
+
+                        <ul class="items-center nav__list">
                             <li class="nav__item">
-                                <a href="#!" class="nav__link">Home</a>
+                                <a href="./" class="nav__link nav__link--active">Home</a>
                             </li>
                             <li class="nav__item">
                                 <a href="#!" class="nav__link">Blog</a>
