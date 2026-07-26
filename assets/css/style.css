@@ -148,8 +148,12 @@ img {
 
 .grid-auto {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+
+    @media (width < 992px) {
+        gap: 12px;
+    }
 }
 
 .btn {
@@ -620,10 +624,22 @@ img {
     &::-webkit-scrollbar {
         display: none;
     }
+
+    @media (width < 992px) {
+        margin-block: 56px 64px;
+    }
+
+    @media (width < 768px) {
+        margin-block: 40px 48px;
+    }
 }
 
 .tabs__list {
     gap: 40px;
+
+    @media (width < 992px) {
+        gap: 28px;
+    }
 }
 
 .tab-item {
@@ -632,10 +648,14 @@ img {
     flex-shrink: 0;
     padding-bottom: 12px;
     cursor: pointer;
+
+    @media (width < 992px) {
+        padding-bottom: 8px;
+    }
 }
 
-.tab-item:hover::after,
-.tab-item--active::after {
+.tab-item--active::after,
+.tab-item:not(.tab-item--active):hover::after {
     content: '';
 
     position: absolute;
@@ -646,12 +666,27 @@ img {
     height: 6px;
     border-radius: 999px;
 
-    background: var(--btn-bg-color);
     transform: translateX(-50%);
+
+    @media (width < 992px) {
+        width: 56px;
+        height: 5px;
+    }
+
+    @media (width < 768px) {
+        width: 44px;
+        height: 4px;
+    }
 }
 
-.tab-item:not(.tab-item--active):hover::after {
-    background: var(--tab-item-bg-hover-color);
+.tab-item--active::after {
+    background: var(--btn-bg-color);
+}
+
+@media (hover: hover) {
+    .tab-item:not(.tab-item--active):hover::after {
+        background: var(--tab-item-bg-hover-color);
+    }
 }
 
 .tab-item__btn {
@@ -660,6 +695,12 @@ img {
     font-weight: 600;
     color: var(--desc-color);
     line-height: 1;
+
+    transition: transform 0.15s ease;
+
+    &:active {
+        transform: scale(0.96);
+    }
 }
 
 .gallery-item__thumb {
@@ -676,8 +717,14 @@ img {
 
     transition: transform 0.3s ease;
 
-    &:hover {
-        transform: scale(1.08);
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+
+    .gallery-item__link:active & {
+        opacity: 0.8;
     }
 }
 
