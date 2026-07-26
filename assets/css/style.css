@@ -1047,14 +1047,11 @@ img {
     row-gap: 20px;
 
     & > a {
-        transition:
-            transform 0.15s ease,
-            opacity 0.15s ease;
+        transition: opacity 0.15s ease;
     }
 
     & > a:active {
-        transform: scale(0.985);
-        opacity: 0.85;
+        opacity: 0.6;
     }
 }
 
