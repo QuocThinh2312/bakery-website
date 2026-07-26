@@ -41,6 +41,7 @@
     --footer-copyright-color: #737373;
     --footer-text-hover-color: #fef08a;
     --title-product-active-color: rgba(255, 255, 255, 0.8);
+    --name-featured-item-active-color: rgba(0, 0, 0, 0.6);
 
     --section-spacing: clamp(5.6rem, -8.1143rem + 17.8571vw, 9.6rem);
 
@@ -325,8 +326,8 @@ img {
     }
 }
 
-.nav__list {
-    @media (width < 768px) {
+@media (width < 768px) {
+    .nav__list {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -487,8 +488,8 @@ img {
     }
 }
 
-.products-item__row {
-    @media (width < 768px) {
+@media (width < 768px) {
+    .products-item__row {
         gap: 40px;
     }
 }
@@ -618,7 +619,7 @@ img {
     border-bottom: 1px solid var(--nav-border-bottom-color);
     margin-block: 72px 88px;
 
-    overflow: auto hidden;
+    overflow-x: auto;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -634,11 +635,65 @@ img {
     }
 }
 
+@media (width < 576px) {
+    .tabs__wrapper {
+        --fade-bg-color: #fff;
+
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            z-index: 1;
+
+            width: 100px;
+            height: 100%;
+
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        &::before {
+            left: 0;
+            background: linear-gradient(
+                to right,
+                var(--fade-bg-color),
+                transparent
+            );
+        }
+
+        &::after {
+            right: 0;
+            background: linear-gradient(
+                to left,
+                var(--fade-bg-color),
+                transparent
+            );
+        }
+
+        &[data-scroll='start']::after,
+        &[data-scroll='middle']::before,
+        &[data-scroll='middle']::after,
+        &[data-scroll='end']::before {
+            opacity: 1;
+        }
+    }
+}
+
 .tabs__list {
     gap: 40px;
 
     @media (width < 992px) {
         gap: 28px;
+    }
+
+    @media (width < 576px) {
+        justify-content: flex-start;
+        padding-inline: 1px;
     }
 }
 
@@ -662,20 +717,14 @@ img {
     bottom: 0;
     left: 50%;
 
-    width: 70px;
+    width: 105%;
     height: 6px;
     border-radius: 999px;
 
     transform: translateX(-50%);
 
     @media (width < 992px) {
-        width: 56px;
         height: 5px;
-    }
-
-    @media (width < 768px) {
-        width: 44px;
-        height: 4px;
     }
 }
 
@@ -700,6 +749,23 @@ img {
 
     &:active {
         transform: scale(0.96);
+    }
+}
+
+.gallery__list {
+    --columns: 3;
+
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: 20px;
+
+    @media (width < 992px) {
+        --columns: 2;
+        gap: 12px;
+    }
+
+    @media (width < 576px) {
+        --columns: 1;
     }
 }
 
@@ -760,43 +826,76 @@ img {
 }
 
 /* Featured */
-.featured {
-    margin-top: var(--section-spacing);
-}
-
+.featured,
 .featured__list {
     margin-top: var(--section-spacing);
 }
 
-.featured__wrapper {
+@media (width < 992px) {
+    .featured__list {
+        row-gap: 48px;
+    }
+}
+
+@media (width < 768px) {
+    .featured-item {
+        width: min(360px, 100%);
+        margin-inline: auto;
+    }
+
+    .featured__list {
+        row-gap: 36px;
+    }
+}
+
+.featured-item__wrapper {
     display: block;
     width: 100%;
     aspect-ratio: 360 / 356;
+    border-radius: 8px;
     overflow: hidden;
 }
 
-.featured__img {
+.featured-item__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 
     transition: transform 0.3s ease;
 
-    &:hover {
-        transform: scale(1.08);
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+
+    .featured-item__wrapper:active & {
+        opacity: 0.8;
     }
 }
 
-.featured__info {
+.featured-item__info {
     padding-inline: 60px;
     margin-top: 32px;
+
+    @media (width < 992px) {
+        margin-top: 24px;
+    }
+
+    @media (width < 768px) {
+        margin-top: 18px;
+    }
 }
 
-.featured__name,
-.featured__price {
+.featured-item__name,
+.featured-item__price {
     font-size: var(--fs-product-title);
     font-weight: 600;
     color: var(--text-color-black);
+}
+
+.featured-item__name:active {
+    color: var(--name-featured-item-active-color);
 }
 
 /* Footer */

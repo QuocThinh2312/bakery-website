@@ -286,31 +286,33 @@
                 <div class="container">
                     <h2 class="heading">Explore More</h2>
 
-                    <nav class="tabs" aria-label="Product categories">
-                        <ul class="flex-center tabs__list">
-                            <li class="tab-item tab-item--active">
-                                <button type="button" class="tab-item__btn">Cake</button>
-                            </li>
-                            <li class="tab-item">
-                                <button type="button" class="tab-item__btn">Muffins</button>
-                            </li>
-                            <li class="tab-item">
-                                <button type="button" class="tab-item__btn">Croissant</button>
-                            </li>
-                            <li class="tab-item">
-                                <button type="button" class="tab-item__btn">Bread</button>
-                            </li>
-                            <li class="tab-item">
-                                <button type="button" class="tab-item__btn">Tart</button>
-                            </li>
-                            <li class="tab-item">
-                                <button type="button" class="tab-item__btn">Favorite</button>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div class="tabs__wrapper" data-scroll="none">
+                        <nav class="tabs" aria-label="Product categories">
+                            <ul class="flex-center tabs__list">
+                                <li class="tab-item tab-item--active">
+                                    <button type="button" class="tab-item__btn">Cake</button>
+                                </li>
+                                <li class="tab-item">
+                                    <button type="button" class="tab-item__btn">Muffins</button>
+                                </li>
+                                <li class="tab-item">
+                                    <button type="button" class="tab-item__btn">Croissant</button>
+                                </li>
+                                <li class="tab-item">
+                                    <button type="button" class="tab-item__btn">Bread</button>
+                                </li>
+                                <li class="tab-item">
+                                    <button type="button" class="tab-item__btn">Tart</button>
+                                </li>
+                                <li class="tab-item">
+                                    <button type="button" class="tab-item__btn">Favorite</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
 
                     <div class="gallery">
-                        <ul class="grid-auto gallery__list">
+                        <ul class="gallery__list">
                             <!-- Cake group -->
                             <li class="gallery-item" data-category="cake">
                                 <a href="#!" class="gallery-item__link">
@@ -430,22 +432,22 @@
                         <!-- Item 1 -->
                         <article class="featured-item">
                             <figure>
-                                <a href="#!" class="featured__wrapper">
+                                <a href="#!" class="featured-item__wrapper">
                                     <img
                                         src="./assets/images/featured-1.webp"
                                         alt="Puff Pastry "
-                                        class="featured__img"
+                                        class="featured-item__img"
                                         width="1080"
                                         height="1068"
                                         loading="lazy"
                                         decoding="async"
                                     />
                                 </a>
-                                <figcaption class="flex-between featured__info">
+                                <figcaption class="flex-between featured-item__info">
                                     <a href="#!">
-                                        <h3 class="featured__name">Puff Pastry</h3>
+                                        <h3 class="featured-item__name">Puff Pastry</h3>
                                     </a>
-                                    <data value="8" class="featured__price">$8</data>
+                                    <data value="8" class="featured-item__price">$8</data>
                                 </figcaption>
                             </figure>
                         </article>
@@ -453,22 +455,22 @@
                         <!-- Item 2 -->
                         <article class="featured-item">
                             <figure>
-                                <a href="#!" class="featured__wrapper">
+                                <a href="#!" class="featured-item__wrapper">
                                     <img
                                         src="./assets/images/featured-2.webp"
                                         alt="Doughnuts"
-                                        class="featured__img"
+                                        class="featured-item__img"
                                         width="1080"
                                         height="1068"
                                         loading="lazy"
                                         decoding="async"
                                     />
                                 </a>
-                                <figcaption class="flex-between featured__info">
+                                <figcaption class="flex-between featured-item__info">
                                     <a href="#!">
-                                        <h3 class="featured__name">Doughnuts</h3>
+                                        <h3 class="featured-item__name">Doughnuts</h3>
                                     </a>
-                                    <data value="10" class="featured__price">$10</data>
+                                    <data value="10" class="featured-item__price">$10</data>
                                 </figcaption>
                             </figure>
                         </article>
@@ -476,22 +478,22 @@
                         <!-- Item 3 -->
                         <article class="featured-item">
                             <figure>
-                                <a href="#!" class="featured__wrapper">
+                                <a href="#!" class="featured-item__wrapper">
                                     <img
                                         src="./assets/images/featured-3.webp"
                                         alt="Brownies"
-                                        class="featured__img"
+                                        class="featured-item__img"
                                         width="1080"
                                         height="1068"
                                         loading="lazy"
                                         decoding="async"
                                     />
                                 </a>
-                                <figcaption class="flex-between featured__info">
+                                <figcaption class="flex-between featured-item__info">
                                     <a href="#!">
-                                        <h3 class="featured__name">Brownies</h3>
+                                        <h3 class="featured-item__name">Brownies</h3>
                                     </a>
-                                    <data value="15" class="featured__price">$15</data>
+                                    <data value="15" class="featured-item__price">$15</data>
                                 </figcaption>
                             </figure>
                         </article>
@@ -641,5 +643,35 @@
                 <p class="footer__copyright">© 2024 Bake House. All rights reserved</p>
             </div>
         </footer>
+
+        <script>
+            const tabs = document.querySelector('.tabs');
+            const wrapper = document.querySelector('.tabs__wrapper');
+
+            function updateScrollState() {
+                const { scrollLeft, scrollWidth, clientWidth } = tabs;
+
+                if (scrollWidth <= clientWidth) {
+                    wrapper.setAttribute('data-scroll', 'none');
+                    return;
+                }
+
+                const isAtStart = scrollLeft <= 0;
+                const isAtEnd = Math.ceil(scrollLeft) >= scrollWidth - clientWidth;
+
+                if (isAtStart) {
+                    wrapper.setAttribute('data-scroll', 'start');
+                } else if (isAtEnd) {
+                    wrapper.setAttribute('data-scroll', 'end');
+                } else {
+                    wrapper.setAttribute('data-scroll', 'middle');
+                }
+            }
+
+            tabs.addEventListener('scroll', updateScrollState, { passive: true });
+            window.addEventListener('resize', updateScrollState);
+
+            updateScrollState();
+        </script>
     </body>
 </html>
