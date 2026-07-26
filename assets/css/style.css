@@ -904,21 +904,46 @@ img {
     margin-top: var(--section-spacing);
 
     background: url(../images/footer-bg.webp) center / cover no-repeat;
+
+    @media (width < 992px) {
+        padding-block: 16px 32px;
+    }
+
+    @media (width < 576px) {
+        padding-block-end: 28px;
+    }
 }
 
 .footer__top {
     border-bottom: 2px solid var(--footer-border-bottom-color);
+
+    @media (width < 576px) {
+        justify-content: space-between;
+    }
 }
 
 .social {
     gap: 32px;
     margin-inline: auto 120px;
+
+    @media (width < 992px) {
+        gap: 20px;
+        margin-inline: auto 40px;
+    }
+
+    @media (width < 576px) {
+        margin: 0;
+    }
 }
 
 .social__label {
     font-size: var(--fs-body);
     font-weight: 600;
     color: var(--footer-title-color);
+
+    @media (width < 576px) {
+        display: none;
+    }
 }
 
 .social__list {
@@ -928,19 +953,37 @@ img {
 .social__icon {
     transition: transform 0.3s ease;
 
-    &:hover {
-        transform: translateY(-3px);
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-3px);
+        }
     }
 
     & svg {
         width: 32px;
         height: 32px;
+
+        transition: transform 0.15s ease;
+
+        @media (width < 576px) {
+            width: 28px;
+            height: 28px;
+        }
+
+        .social__icon:active & {
+            transform: scale(0.96);
+        }
     }
 }
 
 .footer__main {
     gap: 0;
     margin-block: 32px 60px;
+
+    @media (width < 992px) {
+        row-gap: 28px;
+        margin-block: 28px 48px;
+    }
 }
 
 .footer__heading {
@@ -949,6 +992,10 @@ img {
     font-size: var(--fs-body);
     font-weight: 700;
     color: var(--footer-title-color);
+
+    @media (width < 576px) {
+        margin-bottom: 16px;
+    }
 }
 
 .footer__info,
@@ -972,13 +1019,19 @@ img {
         transform 0.2s ease,
         color 0.2s ease;
 
-    &:not(.footer__address):hover {
-        color: var(--footer-text-hover-color);
-        transform: translateY(-2px);
+    &:not(.footer__address, .news-item__title):active {
+        opacity: 0.6;
+    }
+
+    @media (hover: hover) {
+        &:not(.footer__address):hover {
+            color: var(--footer-text-hover-color);
+            transform: translateY(-2px);
+        }
     }
 }
 
-.footer__text--small {
+.news-item__title {
     font-weight: 500;
 }
 
@@ -992,6 +1045,17 @@ img {
     flex-direction: column;
     align-items: flex-start;
     row-gap: 20px;
+
+    & > a {
+        transition:
+            transform 0.15s ease,
+            opacity 0.15s ease;
+    }
+
+    & > a:active {
+        transform: scale(0.985);
+        opacity: 0.85;
+    }
 }
 
 .news-item {
@@ -1005,6 +1069,10 @@ img {
     width: 100px;
     aspect-ratio: 100 / 67;
     overflow: hidden;
+
+    @media (width < 576px) {
+        width: 80px;
+    }
 }
 
 .news-item__img {
@@ -1014,8 +1082,10 @@ img {
 
     transition: transform 0.3s ease;
 
-    &:hover {
-        transform: scale(1.08);
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.08);
+        }
     }
 }
 
