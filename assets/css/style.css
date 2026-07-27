@@ -266,6 +266,11 @@ img {
     flex: 1;
     overflow: auto hidden;
 
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-nav-color) transparent;
+
+    /* Chrome/Edge/Safari */
     &::-webkit-scrollbar {
         height: 6px;
     }
@@ -282,7 +287,7 @@ img {
 
         width: min(60vw, 320px);
         height: 100dvh;
-        padding: 32px 28px 32px;
+        padding: 32px 28px;
 
         background: var(--drawer-bg-color);
 
@@ -389,13 +394,25 @@ img {
 .hero__inner {
     display: flex;
     flex-direction: column;
-    gap: clamp(4rem, -5.6rem + 16.6667vw, 7.2rem);
+    gap: 72px;
+
+    @media (width < 768px) {
+        gap: 56px;
+    }
+
+    @media (width < 576px) {
+        gap: 40px;
+    }
 }
 
 .hero__content {
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, -0.8rem + 3.125vw, 1.6rem);
+    gap: 16px;
+
+    @media (width < 576px) {
+        gap: 10px;
+    }
 }
 
 .hero__desc {

@@ -658,7 +658,7 @@
                 }
 
                 const isAtStart = scrollLeft <= 0;
-                const isAtEnd = Math.ceil(scrollLeft) >= scrollWidth - clientWidth;
+                const isAtEnd = scrollLeft >= scrollWidth - clientWidth - 1;
 
                 if (isAtStart) {
                     wrapper.setAttribute('data-scroll', 'start');
