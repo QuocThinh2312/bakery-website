@@ -176,7 +176,7 @@ img {
     font-weight: 600;
     color: var(--text-color-white);
 
-    transition: transform 0.15s ease;
+    transition: transform 0.15s;
 
     &:active {
         transform: scale(0.96);
@@ -325,7 +325,7 @@ img {
         margin-left: auto;
 
         color: var(--text-color-white);
-        transition: transform 0.15s ease;
+        transition: transform 0.15s;
 
         &:active {
             transform: scale(0.96);
@@ -479,7 +479,7 @@ img {
 
     background: url(../images/products-bg.webp) center / cover no-repeat;
 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 
     @media (hover: hover) {
         &:hover {
@@ -583,7 +583,7 @@ img {
     font-weight: 500;
     color: var(--text-color-white-pure);
 
-    transition: transform 0.15s ease;
+    transition: transform 0.15s;
 
     &:active {
         transform: scale(0.96);
@@ -673,7 +673,7 @@ img {
 
             pointer-events: none;
             opacity: 0;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.2s;
         }
 
         &::before {
@@ -764,7 +764,7 @@ img {
     color: var(--desc-color);
     line-height: 1;
 
-    transition: transform 0.15s ease;
+    transition: transform 0.15s;
 
     &:active {
         transform: scale(0.96);
@@ -800,7 +800,7 @@ img {
     height: 100%;
     object-fit: cover;
 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 
     @media (hover: hover) {
         &:hover {
@@ -881,7 +881,7 @@ img {
     height: 100%;
     object-fit: cover;
 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 
     @media (hover: hover) {
         &:hover {
@@ -976,7 +976,7 @@ img {
 }
 
 .social__icon {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 
     @media (hover: hover) {
         &:hover {
@@ -988,7 +988,7 @@ img {
         width: 32px;
         height: 32px;
 
-        transition: transform 0.15s ease;
+        transition: transform 0.15s;
 
         @media (width < 576px) {
             width: 28px;
@@ -1041,8 +1041,8 @@ img {
     line-height: 1.4;
 
     transition:
-        transform 0.2s ease,
-        color 0.2s ease;
+        transform 0.2s,
+        color 0.2s;
 
     &:not(.footer__address, .news-item__title):active {
         opacity: 0.6;
@@ -1074,7 +1074,7 @@ img {
     row-gap: 20px;
 
     & > a {
-        transition: opacity 0.15s ease;
+        transition: opacity 0.15s;
     }
 
     & > a:active {
@@ -1104,7 +1104,7 @@ img {
     height: 100%;
     object-fit: cover;
 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 
     @media (hover: hover) {
         &:hover {
